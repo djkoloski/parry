@@ -21,6 +21,7 @@ default = [ "dim3", "f64" ]
 dim3    = [ ]
 f64     = [ ]
 serde-serialize = [ "serde", "nalgebra/serde-serialize" ]
+rkyv-serialize = [ "rkyv", "nalgebra/rkyv-serialize" ]
 simd-stable = [ "simba/wide", "simd-is-enabled" ]
 simd-nightly = [ "simba/packed_simd", "simd-is-enabled" ]
 enhanced-determinism = [ "simba/libm_force", "indexmap" ]
@@ -37,16 +38,17 @@ required-features = [ "dim3", "f64" ]
 either      = "1"
 bitflags    = "1"
 downcast-rs = "1"
-num-traits = { version = "0.2", default-features = false }
-smallvec   = "1"
-slab       = "0.4"
-simba      = "0.4"
-nalgebra   = { version = "0.26", git = "https://github.com/djkoloski/nalgebra", branch = "dev" }
-approx     = { version = "0.4", default-features = false }
-serde      = { version = "1.0", optional = true, features = ["derive", "rc"]}
-num-derive   = "0.3"
-indexmap = { version = "1", features = [ "serde-1" ], optional = true }
-rustc-hash = "1"
+num-traits  = { version = "0.2", default-features = false }
+smallvec    = "1"
+slab        = "0.4"
+simba       = "0.4"
+nalgebra    = { version = "0.26", git = "https://github.com/djkoloski/nalgebra", branch = "dev" }
+approx      = { version = "0.4", default-features = false }
+serde       = { version = "1.0", optional = true, features = ["derive", "rc"]}
+rkyv        = { version = "~0.6.3", optional = true }
+num-derive  = "0.3"
+indexmap    = { version = "1", features = [ "serde-1" ], optional = true }
+rustc-hash  = "1"
 
 
 [dev-dependencies]
